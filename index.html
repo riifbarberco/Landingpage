@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Riif Barber Co. | El Laguito, Cartagena</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --color-sand: #eadfc5;
@@ -21,14 +21,16 @@
             scroll-behavior: smooth;
         }
 
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
+        .font-logo-style {
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            line-height: 1.2;
+            font-weight: 300;
         }
 
-        /* LOGO OFICIAL - IMAGEN REEMPLAZABLE */
         .logo-official {
-            width: 150px; /* Ajusta según el tamaño de tu PNG */
+            width: 110px;
             height: auto;
             transition: transform 0.3s ease;
         }
@@ -44,13 +46,21 @@
             font-weight: 600;
         }
 
+        .nav-link-style {
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.4em;
+            font-weight: 500;
+            font-size: 9px;
+        }
+
         .hero-overlay {
-            background: linear-gradient(to bottom, rgba(26,26,26,0.95), rgba(26,26,26,0.7));
+            background: linear-gradient(to bottom, rgba(26,26,26,0.95), rgba(26,26,26,0.5));
         }
 
         .service-card {
             border-bottom: 1px solid rgba(234, 223, 197, 0.1);
-            padding-bottom: 1.5rem;
+            padding-bottom: 1rem;
             transition: all 0.3s ease;
         }
 
@@ -59,12 +69,13 @@
             background: rgba(234, 223, 197, 0.03);
         }
 
-        .qr-container {
-            border: 1px solid var(--color-crust);
-            background: #fff;
-            padding: 1.5rem;
-            display: inline-block;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+        .fade-in {
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
@@ -72,25 +83,22 @@
 
     <!-- Navegación -->
     <nav class="fixed w-full z-50 bg-[#1a1a1a]/95 backdrop-blur-md border-b border-[#664e27]/20">
-        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
-            <!-- Espacio para el Logo PNG de GitHub -->
+        <div class="max-w-77xl mx-auto px-6 h-20 flex items-center justify-between">
             <a href="#inicio" class="flex items-center">
-                <!-- Reemplaza el src con tu link de GitHub cuando lo tengas -->
-                <img src="https://raw.githubusercontent.com/Anateresa/riif-assets/main/logo-riif.png" 
-                     onerror="this.src='https://placehold.co/200x80/1a1a1a/eadfc5?text=Riif+Barber'" 
+                <img src="https://raw.githubusercontent.com/riifbarberco/Landingpage/main/logo-riif.png" 
+                     onerror="this.src='https://placehold.co/150x60/1a1a1a/eadfc5?text=Riif+Barber'" 
                      alt="Riif Barber Co. Logo" 
                      class="logo-official">
             </a>
             
-            <div class="hidden md:flex space-x-10 text-[10px] font-novecento text-[#eadfc5]">
-                <a href="#inicio" class="hover:text-white transition tracking-[0.2em]">INICIO</a>
-                <a href="#servicios" class="hover:text-white transition tracking-[0.2em]">SERVICIOS</a>
-                <a href="#reserva-qr" class="hover:text-white transition tracking-[0.2em]">RESERVAR</a>
-                <a href="#contacto" class="hover:text-white transition tracking-[0.2em]">CONTACTO</a>
+            <div class="hidden md:flex space-x-12 text-[#eadfc5]">
+                <a href="#inicio" class="nav-link-style hover:text-white transition">INICIO</a>
+                <a href="#servicios" class="nav-link-style hover:text-white transition">SERVICIOS</a>
+                <a href="#contacto" class="nav-link-style hover:text-white transition">CONTACTO</a>
             </div>
 
-            <a href="https://www.fresha.com/book-now/riif-barber-co-wu9zfvio/services?lid=1454160&share=true&pId=1381014" target="_blank" class="bg-[#664e27] text-white px-6 py-2.5 rounded-sm font-novecento text-[10px] hover:bg-[#eadfc5] hover:text-black transition-all duration-300">
-                AGENDAR
+            <a href="https://www.fresha.com/book-now/riif-barber-co-wu9zfvio/services?lid=1454160&share=true&pId=1381014" target="_blank" class="bg-[#664e27] text-white px-5 py-2 rounded-sm font-novecento text-[9px] hover:bg-[#eadfc5] hover:text-black transition-all duration-300 uppercase">
+                Agendar ahora
             </a>
         </div>
     </nav>
@@ -98,14 +106,22 @@
     <!-- Hero Section -->
     <section id="inicio" class="relative h-screen flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Riif Barber Co interior" class="w-full h-full object-cover scale-105">
+            <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Barbería Riif" class="w-full h-full object-cover scale-105">
             <div class="absolute inset-0 hero-overlay"></div>
         </div>
         
-        <div class="relative z-10 text-center px-4 max-w-4xl">
-            <p class="text-[#c6ac89] font-novecento mb-6 text-xs tracking-[0.6em]">EL LAGUITO · CARTAGENA</p>
-            <h1 class="text-6xl md:text-8xl mb-8 text-[#eadfc5] leading-none">RIIF BARBER CO.</h1>
-            <p class="text-white/60 text-lg mb-12 font-light tracking-widest italic font-serif">Donde la tradición se encuentra con la excelencia.</p>
+        <div class="relative z-10 text-center px-4 max-w-5xl fade-in">
+            <p class="text-[#c6ac89] font-novecento mb-6 text-[10px] tracking-[0.6em]">EL LAGUITO · CARTAGENA</p>
+            
+            <h1 class="font-logo-style text-4xl md:text-6xl mb-10 text-[#eadfc5] mt-20">
+                Más que un corte,<br>
+                <span class="font-medium text-white/90">una experiencia.</span>
+            </h1>
+
+            <p class="text-white/40 text-[10px] md:text-xs mb-12 font-light tracking-[0.5em] uppercase">
+                Atención · Servicio · Experiencia
+            </p>
+
             <div class="flex flex-col sm:flex-row justify-center gap-6">
                 <a href="https://www.fresha.com/book-now/riif-barber-co-wu9zfvio/services?lid=1454160&share=true&pId=1381014" target="_blank" class="inline-block px-12 py-4 bg-[#664e27] text-white font-novecento text-[11px] tracking-widest hover:bg-white hover:text-black transition-all">
                     RESERVAR CITA
@@ -117,44 +133,101 @@
         </div>
     </section>
 
-    <!-- Servicios -->
-    <section id="servicios" class="py-32 px-6 bg-[#1a1a1a]">
-        <div class="max-w-5xl mx-auto">
-            <div class="text-center mb-24">
-                <h2 class="text-4xl md:text-6xl mb-6 text-[#eadfc5]">Menu de Servicios</h2>
-                <div class="w-24 h-[1px] bg-[#664e27] mx-auto mb-8"></div>
-                <p class="text-[#c6ac89] font-novecento text-[10px] tracking-[0.5em] uppercase">The Riif Standard</p>
+    <!-- Sección de Servicios -->
+    <section id="servicios" class="pt-16 pb-32 px-6 bg-[#1a1a1a]">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl mb-4 text-[#eadfc5] font-logo-style">Lista de Precios</h2>
+                <div class="w-16 h-[1px] bg-[#664e27] mx-auto mb-6"></div>
+                <div class="text-[#c6ac89] font-novecento text-[9px] tracking-[0.2em] uppercase leading-relaxed max-w-2xl mx-auto">
+                    <p>Los servicios vienen acompañados con una bebida como agua, café, soda, cerveza o whisky 12 años</p>
+                    <p class="text-zinc-500 mt-2 text-[8px]">Services include a drink such as water, coffee, soda, beer, or 12-year-old whiskey</p>
+                </div>
             </div>
             
-            <div class="grid md:grid-cols-2 gap-x-24 gap-y-16">
-                <div class="space-y-12">
-                    <div class="service-card group">
-                        <div class="flex justify-between items-end mb-3">
-                            <h3 class="text-2xl text-[#eadfc5] font-light italic font-serif">Riif Black Experience</h3>
-                            <span class="text-[#eadfc5] font-bold text-xl">$95k</span>
+            <div class="grid md:grid-cols-2 gap-16 lg:gap-24">
+                <!-- COLUMNA 1: EXPERIENCIA Y VIP -->
+                <div>
+                    <h4 class="font-novecento text-[#c6ac89] text-[10px] mb-10 tracking-[0.3em] border-l-2 border-[#664e27] pl-4 uppercase">Experiencia y VIP</h4>
+                    <div class="space-y-8">
+                        <div class="service-card">
+                            <div class="flex justify-between items-baseline">
+                                <div class="pr-4">
+                                    <h3 class="text-[#eadfc5] font-light tracking-wide uppercase text-sm leading-snug">Corte y Barba Riif Experience</h3>
+                                    <p class="text-[10px] text-zinc-500 mt-1">HAIRCUT & BEARD RIIF EXPERIENCE</p>
+                                </div>
+                                <span class="text-[#eadfc5] font-semibold">$130.000</span>
+                            </div>
                         </div>
-                        <p class="text-zinc-500 text-[10px] uppercase tracking-widest">Full ritual: Drink + Cut + Beard + Spa</p>
-                    </div>
-                    <div class="service-card group">
-                        <div class="flex justify-between items-end mb-3">
-                            <h3 class="text-2xl text-[#eadfc5] font-light italic font-serif">Riif Gold Experience</h3>
-                            <span class="text-[#eadfc5] font-bold text-xl">$70k</span>
+                        <div class="service-card">
+                            <div class="flex justify-between items-baseline">
+                                <div class="pr-4">
+                                    <h3 class="text-[#eadfc5] font-light tracking-wide uppercase text-sm leading-snug">Corte Riif Experience</h3>
+                                    <p class="text-[10px] text-zinc-500 mt-1">HAIRCUT RIIF EXPERIENCE</p>
+                                </div>
+                                <span class="text-[#eadfc5] font-semibold">$80.000</span>
+                            </div>
                         </div>
-                        <p class="text-zinc-500 text-[10px] uppercase tracking-widest">Premium ritual: Drink + Cut + Spa</p>
+                        <div class="service-card">
+                            <div class="flex justify-between items-baseline">
+                                <div class="pr-4">
+                                    <h3 class="text-[#eadfc5] font-light tracking-wide uppercase text-sm leading-snug">Corte + Barba VIP</h3>
+                                    <p class="text-[10px] text-zinc-500 mt-1">HAIRCUT + BEARD VIP</p>
+                                </div>
+                                <span class="text-[#eadfc5] font-semibold">$95.000</span>
+                            </div>
+                        </div>
+                        <div class="service-card">
+                            <div class="flex justify-between items-baseline">
+                                <div class="pr-4">
+                                    <h3 class="text-[#eadfc5] font-light tracking-wide uppercase text-sm leading-snug">Corte VIP</h3>
+                                    <p class="text-[10px] text-zinc-500 mt-1">HAIRCUT VIP</p>
+                                </div>
+                                <span class="text-[#eadfc5] font-semibold">$65.000</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="space-y-12">
-                    <div class="service-card group">
-                        <div class="flex justify-between items-end mb-3">
-                            <h3 class="text-2xl text-[#eadfc5] font-light italic font-serif">Corte / Haircut</h3>
-                            <span class="text-[#eadfc5] font-bold text-xl">$35k</span>
+                <!-- COLUMNA 2: SERVICIOS BÁSICOS -->
+                <div>
+                    <h4 class="font-novecento text-[#c6ac89] text-[10px] mb-10 tracking-[0.3em] border-l-2 border-[#664e27] pl-4 uppercase">Servicios Básicos</h4>
+                    <div class="space-y-8">
+                        <div class="service-card">
+                            <div class="flex justify-between items-baseline">
+                                <div class="pr-4">
+                                    <h3 class="text-[#eadfc5] font-light tracking-wide uppercase text-sm leading-snug">Corte</h3>
+                                    <p class="text-[10px] text-zinc-500 mt-1">HAIRCUT</p>
+                                </div>
+                                <span class="text-[#eadfc5] font-semibold">$35.000</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="service-card group">
-                        <div class="flex justify-between items-end mb-3">
-                            <h3 class="text-2xl text-[#eadfc5] font-light italic font-serif">Barba / Beard</h3>
-                            <span class="text-[#eadfc5] font-bold text-xl">$25k</span>
+                        <div class="service-card">
+                            <div class="flex justify-between items-baseline">
+                                <div class="pr-4">
+                                    <h3 class="text-[#eadfc5] font-light tracking-wide uppercase text-sm leading-snug">Corte y Barba</h3>
+                                    <p class="text-[10px] text-zinc-500 mt-1">HAIRCUT & BEARD</p>
+                                </div>
+                                <span class="text-[#eadfc5] font-semibold">$60.000</span>
+                            </div>
+                        </div>
+                        <div class="service-card">
+                            <div class="flex justify-between items-baseline">
+                                <div class="pr-4">
+                                    <h3 class="text-[#eadfc5] font-light tracking-wide uppercase text-sm leading-snug">Barba</h3>
+                                    <p class="text-[10px] text-zinc-500 mt-1">BEARD</p>
+                                </div>
+                                <span class="text-[#eadfc5] font-semibold">$25.000</span>
+                            </div>
+                        </div>
+                        <div class="service-card">
+                            <div class="flex justify-between items-baseline">
+                                <div class="pr-4">
+                                    <h3 class="text-[#eadfc5] font-light tracking-wide uppercase text-sm leading-snug">Tratamiento Facial</h3>
+                                    <p class="text-[10px] text-zinc-500 mt-1">FACIAL TREATMENT EXPERIENCE</p>
+                                </div>
+                                <span class="text-[#eadfc5] font-semibold">$65.000</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -163,15 +236,14 @@
     </section>
 
     <!-- Footer -->
-    <footer id="contacto" class="py-24 px-6 bg-black text-white">
+    <footer id="contacto" class="py-24 px-6 bg-black text-white border-t border-zinc-900">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-16">
             <div class="flex flex-col items-start">
-                <!-- Logo Footer -->
-                <img src="https://raw.githubusercontent.com/Anateresa/riif-assets/main/logo-riif.png" 
-                     onerror="this.src='https://placehold.co/200x80/1a1a1a/eadfc5?text=Riif+Barber'" 
+                <img src="https://raw.githubusercontent.com/riifbarberco/Landingpage/main/logo-riif.png" 
+                     onerror="this.src='https://placehold.co/150x60/1a1a1a/eadfc5?text=Riif+Barber'" 
                      alt="Riif Barber Co. Logo" 
-                     class="logo-official !w-[180px]">
-                <p class="text-zinc-600 text-sm mt-10 max-w-xs font-light tracking-wide">
+                     class="logo-official !w-[130px]">
+                <p class="text-zinc-600 text-sm mt-8 max-w-xs font-light tracking-wide leading-relaxed">
                     Elevando el estándar del cuidado masculino en Cartagena.
                 </p>
             </div>
@@ -180,13 +252,14 @@
                 <div>
                     <h4 class="font-novecento text-[11px] text-[#eadfc5] mb-8 tracking-[0.4em]">VISÍTANOS</h4>
                     <p class="text-sm text-zinc-400 font-light leading-relaxed">
-                        Edificio Dann, Local Principal<br>
-                        El Laguito, Cartagena
+                        Cra 1b #1a-24 local 1b<br>
+                        Edif Calamari, Laguito<br>
+                        Cartagena, Bolívar
                     </p>
                 </div>
                 <div>
                     <h4 class="font-novecento text-[11px] text-[#eadfc5] mb-8 tracking-[0.4em]">SÍGUENOS</h4>
-                    <p class="text-sm text-zinc-400 font-light">
+                    <p class="text-sm text-zinc-400 font-light leading-relaxed">
                         @riifbarberco<br>
                         +57 301 585 7963
                     </p>

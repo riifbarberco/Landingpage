@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riif Barber Co. | El Laguito, Cartagena</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-sand: #eadfc5;
+            --color-crust: #664e27;
+            --color-accent: #c6ac89;
+            --color-dark: #1a1a1a;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--color-dark);
+            color: var(--color-sand);
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        /* LOGO OFICIAL - IMAGEN REEMPLAZABLE */
+        .logo-official {
+            width: 150px; /* Ajusta según el tamaño de tu PNG */
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-official:hover {
+            transform: scale(1.05);
+        }
+
+        .font-novecento {
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 600;
+        }
+
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(26,26,26,0.95), rgba(26,26,26,0.7));
+        }
+
+        .service-card {
+            border-bottom: 1px solid rgba(234, 223, 197, 0.1);
+            padding-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            border-bottom: 1px solid var(--color-sand);
+            background: rgba(234, 223, 197, 0.03);
+        }
+
+        .qr-container {
+            border: 1px solid var(--color-crust);
+            background: #fff;
+            padding: 1.5rem;
+            display: inline-block;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navegación -->
+    <nav class="fixed w-full z-50 bg-[#1a1a1a]/95 backdrop-blur-md border-b border-[#664e27]/20">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+            <!-- Espacio para el Logo PNG de GitHub -->
+            <a href="#inicio" class="flex items-center">
+                <!-- Reemplaza el src con tu link de GitHub cuando lo tengas -->
+                <img src="https://raw.githubusercontent.com/Anateresa/riif-assets/main/logo-riif.png" 
+                     onerror="this.src='https://placehold.co/200x80/1a1a1a/eadfc5?text=Riif+Barber'" 
+                     alt="Riif Barber Co. Logo" 
+                     class="logo-official">
+            </a>
+            
+            <div class="hidden md:flex space-x-10 text-[10px] font-novecento text-[#eadfc5]">
+                <a href="#inicio" class="hover:text-white transition tracking-[0.2em]">INICIO</a>
+                <a href="#servicios" class="hover:text-white transition tracking-[0.2em]">SERVICIOS</a>
+                <a href="#reserva-qr" class="hover:text-white transition tracking-[0.2em]">RESERVAR</a>
+                <a href="#contacto" class="hover:text-white transition tracking-[0.2em]">CONTACTO</a>
+            </div>
+
+            <a href="https://www.fresha.com/book-now/riif-barber-co-wu9zfvio/services?lid=1454160&share=true&pId=1381014" target="_blank" class="bg-[#664e27] text-white px-6 py-2.5 rounded-sm font-novecento text-[10px] hover:bg-[#eadfc5] hover:text-black transition-all duration-300">
+                AGENDAR
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Riif Barber Co interior" class="w-full h-full object-cover scale-105">
+            <div class="absolute inset-0 hero-overlay"></div>
+        </div>
+        
+        <div class="relative z-10 text-center px-4 max-w-4xl">
+            <p class="text-[#c6ac89] font-novecento mb-6 text-xs tracking-[0.6em]">EL LAGUITO · CARTAGENA</p>
+            <h1 class="text-6xl md:text-8xl mb-8 text-[#eadfc5] leading-none">RIIF BARBER CO.</h1>
+            <p class="text-white/60 text-lg mb-12 font-light tracking-widest italic font-serif">Donde la tradición se encuentra con la excelencia.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-6">
+                <a href="https://www.fresha.com/book-now/riif-barber-co-wu9zfvio/services?lid=1454160&share=true&pId=1381014" target="_blank" class="inline-block px-12 py-4 bg-[#664e27] text-white font-novecento text-[11px] tracking-widest hover:bg-white hover:text-black transition-all">
+                    RESERVAR CITA
+                </a>
+                <a href="#servicios" class="inline-block px-12 py-4 border border-[#eadfc5] text-[#eadfc5] font-novecento text-[11px] tracking-widest hover:bg-[#eadfc5] hover:text-black transition-all">
+                    VER SERVICIOS
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="py-32 px-6 bg-[#1a1a1a]">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-24">
+                <h2 class="text-4xl md:text-6xl mb-6 text-[#eadfc5]">Menu de Servicios</h2>
+                <div class="w-24 h-[1px] bg-[#664e27] mx-auto mb-8"></div>
+                <p class="text-[#c6ac89] font-novecento text-[10px] tracking-[0.5em] uppercase">The Riif Standard</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-x-24 gap-y-16">
+                <div class="space-y-12">
+                    <div class="service-card group">
+                        <div class="flex justify-between items-end mb-3">
+                            <h3 class="text-2xl text-[#eadfc5] font-light italic font-serif">Riif Black Experience</h3>
+                            <span class="text-[#eadfc5] font-bold text-xl">$95k</span>
+                        </div>
+                        <p class="text-zinc-500 text-[10px] uppercase tracking-widest">Full ritual: Drink + Cut + Beard + Spa</p>
+                    </div>
+                    <div class="service-card group">
+                        <div class="flex justify-between items-end mb-3">
+                            <h3 class="text-2xl text-[#eadfc5] font-light italic font-serif">Riif Gold Experience</h3>
+                            <span class="text-[#eadfc5] font-bold text-xl">$70k</span>
+                        </div>
+                        <p class="text-zinc-500 text-[10px] uppercase tracking-widest">Premium ritual: Drink + Cut + Spa</p>
+                    </div>
+                </div>
+
+                <div class="space-y-12">
+                    <div class="service-card group">
+                        <div class="flex justify-between items-end mb-3">
+                            <h3 class="text-2xl text-[#eadfc5] font-light italic font-serif">Corte / Haircut</h3>
+                            <span class="text-[#eadfc5] font-bold text-xl">$35k</span>
+                        </div>
+                    </div>
+                    <div class="service-card group">
+                        <div class="flex justify-between items-end mb-3">
+                            <h3 class="text-2xl text-[#eadfc5] font-light italic font-serif">Barba / Beard</h3>
+                            <span class="text-[#eadfc5] font-bold text-xl">$25k</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto" class="py-24 px-6 bg-black text-white">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-16">
+            <div class="flex flex-col items-start">
+                <!-- Logo Footer -->
+                <img src="https://raw.githubusercontent.com/Anateresa/riif-assets/main/logo-riif.png" 
+                     onerror="this.src='https://placehold.co/200x80/1a1a1a/eadfc5?text=Riif+Barber'" 
+                     alt="Riif Barber Co. Logo" 
+                     class="logo-official !w-[180px]">
+                <p class="text-zinc-600 text-sm mt-10 max-w-xs font-light tracking-wide">
+                    Elevando el estándar del cuidado masculino en Cartagena.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-20">
+                <div>
+                    <h4 class="font-novecento text-[11px] text-[#eadfc5] mb-8 tracking-[0.4em]">VISÍTANOS</h4>
+                    <p class="text-sm text-zinc-400 font-light leading-relaxed">
+                        Edificio Dann, Local Principal<br>
+                        El Laguito, Cartagena
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-novecento text-[11px] text-[#eadfc5] mb-8 tracking-[0.4em]">SÍGUENOS</h4>
+                    <p class="text-sm text-zinc-400 font-light">
+                        @riifbarberco<br>
+                        +57 301 585 7963
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-24 pt-8 border-t border-zinc-900 text-[10px] font-novecento text-zinc-700 flex justify-between">
+            <span>© 2024 RIIF BARBER CO.</span>
+            <span>DISEÑADO POR ANATERESA</span>
+        </div>
+    </footer>
+
+</body>
+</html>
